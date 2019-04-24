@@ -127,19 +127,19 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   let outputArr = [];
-  arr.forEach(function (element, index, arr){ 
+  arr.forEach(function (element){
 
-    if(element % 3 === 0 && element % 5 !== 0){
+    if(element % 3 === 0 && element % 5 !== 0){  //Do not need to show && el. . . //
       outputArr.push('Fizz');
 
-    }else if(element % 5 === 0 && element % 3 !== 0){ 
+    }else if(element % 5 === 0 && element % 3 !== 0){  //Do not need to show && el. . . //
       outputArr.push('Buzz');
 
     }else if(element % 3 === 0 && element % 5 === 0){
       outputArr.push('Fizz Buzz');
 
-    }else{outputArr.push(element)} 
-});
+    }else{outputArr.push(element);}
+  });
 
   return outputArr;
 };
