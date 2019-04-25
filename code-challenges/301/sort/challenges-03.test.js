@@ -42,7 +42,9 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  arr.sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));   //Source Citation: https://stackoverflow.com/questions/8996963/how-to-perform-case-insensitive-sorting-in-javascript//
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
