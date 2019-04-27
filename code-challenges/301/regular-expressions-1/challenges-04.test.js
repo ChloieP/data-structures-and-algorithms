@@ -52,7 +52,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let Halloween = /\b([Oo]ct)(\b)?(ober)?(\b)/g;
+  return Halloween.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
