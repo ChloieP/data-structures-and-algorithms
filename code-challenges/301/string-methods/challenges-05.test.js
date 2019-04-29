@@ -71,8 +71,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  return result;
+  
+  recipe.ingredients.forEach(ingredient => {
+    let food = ingredient.slice(ingredient.indexOf(' ', 3));
+    result.push(food.substring(1));  //inspired by https://stackoverflow.com/questions/9323182/how-to-remove-the-last-word-in-the-string-using-javascript
+  });
+
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
