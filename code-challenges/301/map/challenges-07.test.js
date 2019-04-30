@@ -7,8 +7,12 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
 
-const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+const forLoopTwoToThe = (arr) => { 
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(Math.pow(2, arr[i]));
+}
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -17,7 +21,6 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
