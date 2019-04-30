@@ -68,14 +68,8 @@ let characters = [
   }
 ];
 
-const getHouses = (arr) => {
-  let houses = [];
-  
-  for (let value of Object.values(arr)) {
-    houses.push(value.house);
-  }
-
-  return houses;
+const totalCharacters = (arr) => {
+  return Object.keys(arr).length
 
 };
 
@@ -87,10 +81,10 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  for(let value of Object.values(arr)) {
-    character.test(value.children);
+  for(let value of Object.values(characters.house)) {
+    houses.push(characters.house);
   }
-  return character;
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
