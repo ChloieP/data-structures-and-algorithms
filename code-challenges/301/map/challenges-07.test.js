@@ -27,7 +27,6 @@ const forEachTwoToThe = (arr) => {
   })
 
   return forArr;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,7 +35,13 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  let mapTwo = [];
+  arr.map(index => {
+    mapTwo.push(Math.pow(2, index));
+  })
+
+  return mapTwo;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
