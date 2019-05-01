@@ -98,20 +98,16 @@ This function should take in an array of data and a character name and return a 
 For example:
 hasChildrenValues(characters, 'Sansa') will return true
 hasChildrenValues(characters, 'Eddard') will return false
+
+/* NOTE FOR THE FUTURE: [from MDN: The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned. In my code, I said it cannot equal undefined.]
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // let children = 0;
-
-  Object.values.forEach(item => {
-  //  if(characters.children >0 ? 'True' : 'False'){
-  //  }else if(Object.keys(arr).some(character => !arr[character.children])){
-      return values[item];
-
-  });
+  return Object.values(arr).find(item => {  
+    return item.name == character && item.children.length > 0;
+    }) 
+      !== undefined;
 };
-
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
