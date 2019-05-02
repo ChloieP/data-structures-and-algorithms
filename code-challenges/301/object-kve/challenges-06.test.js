@@ -143,7 +143,6 @@ const houseSize = (arr) => {
   // Solution code here...
   return sizes;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
