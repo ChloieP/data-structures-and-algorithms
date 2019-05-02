@@ -104,7 +104,7 @@ hasChildrenValues(characters, 'Eddard') will return false
 
 const hasChildrenValues = (arr, character) => {
   return Object.values(arr).find(item => {  
-    return item.name == character && item.children.length > 0;
+    return item.name === character && item.children.length > 0;
     }) 
       !== undefined;
 };
@@ -117,7 +117,15 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name === character && arr[i].children.length > 0) {
+      return true;
+  
+  }else{
+
+    return false;
+  }
+}
 };
 
 /* ------------------------------------------------------------------------------------------------
