@@ -68,18 +68,19 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-<<<<<<< Updated upstream
-  let evenOdd = [];
-  
-  // Solution code here...
+  return arr.map(char => {
+    if (isNaN(char)) {
+      return "N/A";
+      }
+    if (char % 2 === 0) { 
+      return "even";
+      
+    }else{ 
+
+      return "odd";
+    }
+ });
 };
-=======
-  arr.map(char => {
-    if (char === !num)
-      return ("N/A");
-  })
-  };
->>>>>>> Stashed changes
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
