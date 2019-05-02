@@ -68,11 +68,20 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  arr.map(char => {
-    if (char === NaN)
-      return ("N/A");
-  })
-  };
+  return arr.map(char => {
+    if (isNaN(char)) {
+      return "N/A";
+      }
+    if (char % 2 === 0) { 
+      return "even";
+      
+    }else{ 
+
+      return "odd";
+    }
+ });
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -114,7 +123,8 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  return arr.map(obj => obj.ability.name);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
