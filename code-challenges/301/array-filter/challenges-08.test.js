@@ -1,7 +1,5 @@
 'use strict';
 
-import { arrayExpression } from "@babel/types";
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 Write a function named oddValues that, given an array of integers as input, uses filter to return an array containing only the odd integers.
@@ -34,7 +32,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  arr.filter(index => (index.name /[aeiou]/; , index.guts >7lbs ))
+  arr.filter(element => {
+    return forbiddenValues.indexOf(element) !== arr(element);
+  })
+  // filter of all arr that are not in forbiddenValues
 };
 
 /* ------------------------------------------------------------------------------------------------
