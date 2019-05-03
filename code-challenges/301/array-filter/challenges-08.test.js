@@ -33,7 +33,6 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   arr.filter(element => {
-    return forbiddenValues.indexOf(element) !== arr(element);
   })
   // filter of all arr that are not in forbiddenValues
 };
