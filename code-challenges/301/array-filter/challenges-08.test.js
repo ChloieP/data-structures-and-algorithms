@@ -19,7 +19,10 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
+  const pattern = /[aeiou]/;
+  const result = arr.filter(word => pattern.test(word));
 
+    return result;
 };
 
 
