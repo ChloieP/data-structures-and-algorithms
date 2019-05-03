@@ -7,7 +7,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
- CRUDDDDD
+ return arr.filter(arr => (arr % 2));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+
 };
 
 
