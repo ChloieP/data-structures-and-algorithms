@@ -171,7 +171,7 @@ const snorlaxStats = {
 // Here is an example of a single array element: { name: 'speed', total: 35 }
 
 const extractStats = (arr) => {
-   return arr.map(obj => {  
+  return arr.map(obj => {  
     return {name: obj.stat.name, total: obj.effort + obj.baseStat};
    });
 };
