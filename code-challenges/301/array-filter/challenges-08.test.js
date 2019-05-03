@@ -72,8 +72,12 @@ const snorlaxData = {
   weight: 4600,
 };
 
+// given the snorlaxData, below, and an integer as input, uses filter to return an array containing all stats with a baseStat greater than the integer.
+
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter(obj => obj.baseStat > minBaseStat);
+    
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
