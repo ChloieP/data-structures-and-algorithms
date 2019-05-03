@@ -82,6 +82,7 @@ const evenOdd = (arr) => {
  });
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 Use the snorlaxAbilities data, below, for this challenge.
