@@ -165,8 +165,14 @@ const snorlaxStats = {
   weight: 4600,
 };
 
+//uses map to return an array of objects containing the stat name and the total.
+// The total should be the sum of the effort and the baseStat.
+// Here is an example of a single array element: { name: 'speed', total: 35 }
+
 const extractStats = (arr) => {
-  // Solution code here...
+   return arr.map(obj => {  
+    return {name: obj.stat.name, total: obj.effort + obj.baseStat};
+   });
 };
 
 /* ------------------------------------------------------------------------------------------------
