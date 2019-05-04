@@ -7,7 +7,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
- CRUDDDDD
+ return arr.filter(arr => (arr % 2));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,7 +19,9 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  const pattern = /[aeiou]/;
+  return arr.filter(word => pattern.test(word));
+
 };
 
 
@@ -30,7 +32,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter(element => forbiddenValues.indexOf(element) === -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,7 +73,8 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter(obj => obj.baseStat > minBaseStat);
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +84,9 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let solution = arr.filter(obj => obj.baseStat > minBaseStat);
+  let statName = solution.map(obj => obj.stat.name);
+  return statName;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,7 +138,8 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  return arr.filter(obj => !(obj.children));
+      
 };
 
 /* ------------------------------------------------------------------------------------------------
