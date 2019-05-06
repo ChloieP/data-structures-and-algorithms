@@ -67,7 +67,7 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  return arr.reduce((obj) => obj.name);
+  return arr.reduce((acc, cur) => obj.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +139,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let averageVal = arr.reduce((acc, val) => {
+    acc.sum += val;
+    acc.count++;
+
+    return acc;
+  }, {count: 0, sum:0});
+
+  return averageVal.sum / averageVal.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
