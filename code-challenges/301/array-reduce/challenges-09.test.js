@@ -80,7 +80,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-  // Solution code here...
+    return arr.split("").reduce((acc, char)=> char + acc, '');  /*https://medium.com/quick-code/5-ways-to-reverse-a-string-in-javascript-466f62845827
 };
 
 /* ------------------------------------------------------------------------------------------------
