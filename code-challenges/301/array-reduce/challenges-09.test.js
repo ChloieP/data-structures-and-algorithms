@@ -67,7 +67,10 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, cur) => {
+    acc.push(cur.name);
+    return acc; 
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +80,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-  // Solution code here...
+    return arr.split("").reduce((acc, char)=> char + acc, '');  
+    // https://medium.com/quick-code/5-ways-to-reverse-a-string-in-javascript-466f62845827
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,7 +133,12 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+ return arr.reduce((total, kid) => {
+    if (kid.children){
+        total += kid.children.length;  
+      }
+    return total;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +148,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let averageVal = arr.reduce((acc, val) => {
+    acc.sum += val;
+    acc.count++;
+
+    return acc;
+  }, {count: 0, sum:0});
+
+  return averageVal.sum / averageVal.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
