@@ -66,6 +66,7 @@ const errands = [
 
 const howManyTreats = (arr) => {
   return arr[2].items[1].quantity;
+  // as from lecture, and my understanding is 'arr' is the given parameter, [2] is the index of object Pet Store; .items[1] is Treates, the first index of Pet Store, as required by the challenge; and .quantity as requested by the challenge
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,7 +84,14 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  let attack = board[row][col];
+
+    if (attack === '#') { 
+      return 'hit';
+
+    } else {
+      return 'miss';
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
