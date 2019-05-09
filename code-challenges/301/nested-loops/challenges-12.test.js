@@ -102,7 +102,7 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   let product = 1;
-  
+
   numbers.forEach(element => {
     element.forEach(numeros => {
       product *= numeros;
@@ -127,7 +127,19 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let average = 0;
+  let days = 0;
+
+  for (let i = 0; i < weather.length; i++){
+    days += weather[i].length;
+    let reduction = weather[i].reduce((acc, cur) => {
+      return acc + cur;
+    });
+
+      average += reduction;
+    }
+
+    return average / days;
 };
 
 /* ------------------------------------------------------------------------------------------------
