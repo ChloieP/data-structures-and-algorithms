@@ -2,8 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
-You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies. Pat has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined.
-Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores combined. For example, the first element in the hourlySales array should be the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
+You friend Jim has a chain of stores around the greater Seattle area. He specializes in selling ginger cinnamon cookies. Jim has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined. Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores combined. For example, the first element in the hourlySales array should be the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
 For this example, the total at 9:00 a.m. is 17 + 26 + 7 + 5 + 33, or 88 total cookies.
 Return the array of the total number of cookies sold per hour for all of the stores combined.
 ------------------------------------------------------------------------------------------------ */
@@ -37,7 +36,15 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  const objArray = [];
+  const cookiesTODobjArray = [];
+  hours.forEach((element, index) => {
+    const storeSales = {
+      sales: `${data[index]} cookies`,
+      time: element
+    };
+  cookiesTODobjArray.push(storeSales);
+  });
+  return cookiesTODobjArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,7 +65,8 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  return arr[2].items[1].quantity;
+  // as from lecture, and my understanding is 'arr' is the given parameter, [2] is the index of object Pet Store; .items[1] is Treates, the first index of Pet Store, as required by the challenge; and .quantity as requested by the challenge
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,7 +84,14 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  let attack = board[row][col];
+
+    if (attack === '#') { 
+      return 'hit';
+
+    } else {
+      return 'miss';
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +101,15 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let product = 1;
+
+  numbers.forEach(element => {
+    element.forEach(numeros => {
+      product *= numeros;
+    });
+  });
+
+  return product;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,7 +127,19 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let average = 0;
+  let days = 0;
+
+  for (let i = 0; i < weather.length; i++){
+    days += weather[i].length;
+    let reduction = weather[i].reduce((acc, cur) => {
+      return acc + cur;
+    });
+
+      average += reduction;
+    }
+
+    return average / days;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,7 +157,20 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let lowestAvg = 100;
+  let days = 0;
+
+  for(let i = 0; i < weather.length; i++) { 
+    days = weather[i].length;
+    let avg = weather[i].reduce((acc, val) => {
+      return acc + val;
+    });
+    
+    if (lowestAvg === 0 || lowestAvg > avg / days)
+      lowestAvg = avg / days;
+  }  
+
+    return lowestAvg;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,9 +182,20 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
-};
+  let arr = str.split('');
+  let result = [0, 0, 0];
+  let index = 0;
 
+  arr.forEach(item => {
+    if (item === '\n') {
+      index += 1;
+    } else if (item !== ',') {
+      result[index] += Number(item);
+    }
+  });
+
+  return result;
+};
 /* ------------------------------------------------------------------------------------------------
 TESTS
 All the code below will verify that your functions are working to solve the challenges.
