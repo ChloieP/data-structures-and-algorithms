@@ -2,8 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
-You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies. Pat has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined.
-Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores combined. For example, the first element in the hourlySales array should be the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
+You friend Jim has a chain of stores around the greater Seattle area. He specializes in selling ginger cinnamon cookies. Jim has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined. Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores combined. For example, the first element in the hourlySales array should be the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
 For this example, the total at 9:00 a.m. is 17 + 26 + 7 + 5 + 33, or 88 total cookies.
 Return the array of the total number of cookies sold per hour for all of the stores combined.
 ------------------------------------------------------------------------------------------------ */
@@ -37,7 +36,15 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  const objArray = [];
+  const cookiesTODobjArray = [];
+  hours.forEach((element, index) => {
+    const storeSales = {
+      sales: `${data[index]} cookies`,
+      time: element
+    };
+  cookiesTODobjArray.push(storeSales);
+  });
+  return cookiesTODobjArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
