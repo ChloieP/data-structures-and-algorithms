@@ -37,6 +37,8 @@ const totalSum = (input) => {
    });
 };
 
+//https://coderbyte.com/algorithm/sum-of-several-arrays
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 Write a function named divisibleByFiveTwoToThePower that accepts an array of arrays as input.
