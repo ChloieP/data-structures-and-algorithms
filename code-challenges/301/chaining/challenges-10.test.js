@@ -125,7 +125,6 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 let findShortest = (data) => {
   return data.reduce((a, b) => a.height *1 > b.height *1 ? a=b : a).name;
 };
-
 /* ------------------------------------------------------------------------------------------------
 TESTS
 All the code below will verify that your functions are working to solve the challenges.
