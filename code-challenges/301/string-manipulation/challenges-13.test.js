@@ -61,11 +61,7 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  return arr.filter(element => {
-    if(element.includes(target)){
-      return element;
-    }
-    });
+  return arr.filter(element => element.includes(target))
 };
 
 /* ------------------------------------------------------------------------------------------------
