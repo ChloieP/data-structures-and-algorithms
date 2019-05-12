@@ -7,7 +7,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map(string => string[0].toUpperCase()+string.substring(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,7 +79,12 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, cur) => {if (Number(cur.mass) > Number(arr[0].mass)){
+    acc.push(cur.name);  
+  }
+
+  return acc;
+  }, []).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,7 +100,7 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => (a[property] > b[property]) ? 1 : -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +113,9 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+  if (url.includes('https://')){ 
+    return true;
+  }else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
