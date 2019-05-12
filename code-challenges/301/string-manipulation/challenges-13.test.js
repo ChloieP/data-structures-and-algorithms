@@ -47,7 +47,12 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every(element => {
+    if (!element.includes(':)')) {
+      return false;
+    };
+    return true;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
