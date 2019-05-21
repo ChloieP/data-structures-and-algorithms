@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --verbose",
-    "watch": "jest --watchall"
+    "watch": "jest --watchall",
+    "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    
     "jest": "^24.7.1"
   }
 }
