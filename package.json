@@ -6,14 +6,14 @@
   "scripts": {
     "test": "jest --coverage --verbose",
     "watch": "jest --watchall",
-    "lint": "./node_modules/.bin/eslint **/*.js"
+    "lint": "eslint **/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    
+    "eslint": "^5.16.0",
     "jest": "^24.7.1"
   }
 }
