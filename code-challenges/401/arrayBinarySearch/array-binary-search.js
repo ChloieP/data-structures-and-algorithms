@@ -5,7 +5,7 @@ const binarySearch = (arr, val) => {
   let rightSide = arr.length - 1;
 
   while (leftSide <= rightSide){
-    let mid = math.floor(leftSide + (rightSide - leftSide) / 2);
+    let mid = Math.floor(leftSide + (rightSide - leftSide) / 2);
 
     if (arr[mid] < val){
       leftSide = mid + 1;
@@ -14,4 +14,5 @@ const binarySearch = (arr, val) => {
     }else {return mid};
     }
   return -1;
-};
+}
+module.exports = binarySearch;
