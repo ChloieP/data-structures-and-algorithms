@@ -7,4 +7,4 @@
 
 3. Array Binary Search (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/arrayBinarySearch)
 
-4. 
+4. Linked List Implementation (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/data-structures/linkedList)
