@@ -1,4 +1,6 @@
-const linkedList = require('../files/linked-list.js/index.js');
+'use strict';
+
+const LinkedList = require('../files/linked-list.js');
 const faker = require('faker');
 
 let list = new LinkedList();
@@ -10,7 +12,7 @@ for (let i = 0; i < length; i++) {
 }
 
 for (let i = 0; i < values.length; i++) {
-  list.insert(values[i]);
+  list.current(values[i]);
 }
 
 values.reverse();
@@ -23,7 +25,7 @@ describe('Linked Lists', () => {
 
   it('properly inserts into the linked list', () => {
     let newValue = faker.random.word();
-    list.insert(newValue);
+    list.current(newValue);
     values.unshift(newValue);
     expect(list.head.value).toBe(values[0]); 
   });
