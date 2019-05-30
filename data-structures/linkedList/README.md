@@ -20,8 +20,4 @@ Implement a Singly Linked List Data Structure
 
 
 ## Approach & Efficiency
-I started with reading the challenge carefully, and then went to the whiteboard to think through the problem fully. I used a wiki article on binary search that became the source of ideation for my pseudocode and algorithm. This challenge took 3 hours.
-
-## Solution
-
-![alt text](./assets/array_binary_search.png)
+I started with reading the challenge carefully, and then wrote down my plan in my sketchbook. This challenge took 4 hours and the tests are giving me fits.
