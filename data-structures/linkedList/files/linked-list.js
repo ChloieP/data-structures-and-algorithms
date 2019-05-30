@@ -15,18 +15,18 @@ class LinkedList {
   insertAtHead(value){
     let newNode = new Node(value);
 
-    if(!this.head){  //if empty list
-      this.head = newNode; //make new node
-      return this.head; // make new list
+    if(!this.head){
+      this.head = newNode;
+      return this.head; 
     }
 
-    let current = this.head; //start with first node
-    while (current.next) { // while not on last node
-      current = current.next; //go down the linked list
-    } // stops when on last node
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    } 
 
-    current.next = newNode; // add new node to end of list
-    return this.head; // return new list
+    current.next = newNode; 
+    return this.head; 
   }
 
   includes(value){
