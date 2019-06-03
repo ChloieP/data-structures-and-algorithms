@@ -21,9 +21,11 @@ I started with reading the challenge carefully, and then went to the whiteboard 
 
 ## Solution
 
-Append: (./assets/append.jpg) (with Jeff Lawrence)
-insertBefore: (./assets/insertBefore.jpg) (with Mike Chapman)
-insertAfter: (./assets/insertAfter.jpg)
+* Append: (./assets/append.jpg) (with Jeff Lawrence)
+* insertBefore: (./assets/insertBefore.jpg) (with Mike Chapman)
+* insertAfter: (./assets/insertAfter.jpg)
+* Link to code: https://github.com/ChloieP/data-structures-and-algorithms/blob/master/data-structures/linkedList/files/linked-list.js
+
 
 
 I started with reading the challenge carefully, and then wrote down my plan in my sketchbook. This challenge took 4 hours and the tests are giving me fits.
