@@ -1,8 +1,8 @@
 'use strict';
 
 class Node {
-  constructor (value) {
-    this.value = value;
+  constructor () {
+    this.value = null;
     this.next = null;
   }
 }
@@ -12,27 +12,21 @@ class LinkedList {
     this.head = null;
   }
 
-  insertAtHead(value){
-    let newNode = new Node(value);
+  insert(val) {
+    let node = new Node();
 
-    if(!this.head){
-      this.head = newNode;
-      return this.head; 
-    }
+    node.val = val;
+    node.next = this.head;
+    this.head = node;
 
-    let current = this.head;
-    while (current.next) {
-      current = current.next;
-    } 
-
-    current.next = newNode; 
-    return this.head; 
+    return this.head.val;
   }
 
-  includes(value){
+  includes(val){
     let current = this.head;
+
     while (current) {
-      if(current.value === value) {
+      if(current.val === val) {
         return true;
 
       } else { 
@@ -42,36 +36,59 @@ class LinkedList {
     return false;
   }
 
-  insertBefore(val, newVal){
-    let newNode = newNode(newVal);
+  insertBefore(value, newValue){
+    let newNode = new Node();
+    newNode.val = newValue;
     let current = this.head;
 
-    while (current) {
-      if (current.next.value === val){
-        newNode.insert = current.next;
-        current.next = newNode;
-        return newVal;
+    if (current.val === value){
+      newNode.next = this.head;
+      this.head = newNode;
+      return newValue;
+
+    } else { 
+
+      while (current) {
+        if (current.next.val === value){
+          newNode.next = current.next;
+          current.next = newNode;
+          return newValue;
+        
+        } else {
+          current = current.next;
+        }
       }
     }
     return 'Node could not be found';
   }
 
-  insertAfter(val, newVal){
-    let newNode = newNode(val);
+  insertAfter(value, newValue){
+    let newNode = new Node();
+    newNode.val = newValue;
     let current = this.head;
 
     while (current) {
-      if (current.value === val){
-        newNode.insert = current.next;
+      if (current.val === value){
+        newNode.next = current.next;
         current.next = newNode;
-        return value;
+        return newValue;
+
+      } else {
+        current = current.next;
       }
     }
     return 'Node could not be found';
   }
 
   append(val) {
-    let node = newNode(val);
+    let node = new Node();
+    node.val =val;
+
+    if (!this.head) {
+      this.head = node;
+      return val;
+    }
+
     let current = this.head;
 
     while(current){
@@ -82,18 +99,17 @@ class LinkedList {
         current = current.next;
       }
     }
+
+    return val;
   }
 
-    print() {
-      let printList = [];
-      let current = this.head;
+  print() {
+    let current = this.head;
 
-      while(current) {
-        printList.push(current.value);
-        current = current.next;
-      }
-
-      return printList;
+    while(current) {
+      console.log(current.val);
+      current = current.next;
+    }
   }
 };
 

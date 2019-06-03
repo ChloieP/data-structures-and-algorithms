@@ -4,12 +4,14 @@
   "description": "Implement a Singly Linked List Data Structure",
   "main": "linked-list.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage --verbose",
+    "test-watch": "jest --watchAll --coverage --verbose"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^5.16.0",
-    "faker": "^4.1.0"
+    "faker": "^4.1.0",
+    "jest": "^24.8.0"
   }
 }
