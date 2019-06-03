@@ -10,6 +10,11 @@ Implement a Singly Linked List Data Structure
 * At no time should an exception or stack trace be shown to the end user. Catch and handle any such exceptions and return a printed value or operation which cleanly represents the state and either stops execution cleanly, or provides the user with clear direction and output.
 *  Be sure to follow your language/frameworks standard naming conventions (e.g. C# uses PascalCasing for all method and class names).
 
+* CONTINUATION via Code Challenge 6:
+
+* .append(value) which adds a new node with the given value to the end of the list
+* .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+* .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 
 ## Approach & Efficiency
 I started with reading the challenge carefully, and then went to the whiteboard to think through the problem fully. I used a wiki article on binary search that became the source of ideation for my pseudocode and algorithm. This challenge took 3 hours.
@@ -23,4 +28,4 @@ insertAfter: (./assets/insertAfter.jpg)
 
 I started with reading the challenge carefully, and then wrote down my plan in my sketchbook. This challenge took 4 hours and the tests are giving me fits.
 
-UPDATE: Append, insertAfter, insertBefore mob programmed with Jeff, Mike, and myself. 
+UPDATE: Append, insertAfter, insertBefore mob programmed with Jeff, Mike, and myself. This portion took 3.5 hours.
