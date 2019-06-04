@@ -125,4 +125,55 @@ describe('Tests for the linked list', () => {
       expect(current.next.next.next.val).toEqual(4);
     });
   });
+
+  describe('kth', () => {
+    it('answers: Where k is greater than the length of the linked list', () => {
+      let node3 = {value: 3, next: null};
+      let node2 = {value: 2, next: node3};
+      let node1 = {value: 1, next: node2};
+
+      list.head = node1;
+      list.length = 3;
+      expect(list.kthFromEnd(5)).toEqual('ERROR, k is greater than length of linked list');
+    });
+
+    it('answers: Where k and the length of the list are the same', () => {
+      let node3 = {value: 3, next: null};
+      let node2 = {value: 2, next: node3};
+      let node1 = {value: 1, next: node2};
+
+      list.head = node1;
+      list.length = 3;
+      expect(list.kthFromEnd(3)).toEqual(list.head);
+    });
+
+    it('answers: Where k is not a positive integer', () => {
+      let node3 = {value: 3, next: null};
+      let node2 = {value: 2, next: node3};
+      let node1 = {value: 1, next: node2};
+
+      list.head = node1;
+      list.length = 3;
+      expect(list.kthFromEnd(-1)).toEqual('Uh-oh! Negativity is banned');
+
+    });
+
+    it('answers: Where the linked list is of a size 1', () => {
+      let node1 = {value: 1, next: null};
+
+      list.head = node1;
+      list.length = 1;
+      expect(list.kthFromEnd(1)).toEqual(list.head);
+    });   
+
+    it('answers: “Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+      let node3 = {value: 3, next: null};
+      let node2 = {value: 2, next: node3};
+      let node1 = {value: 1, next: node2};
+
+      list.head = node1;
+      list.length = 3;
+      expect(list.kthFromEnd(2)).toEqual(node2);
+    });
+  });
 });

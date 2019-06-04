@@ -10,6 +10,7 @@ class Node {
 class LinkedList { 
   constructor () {
     this.head = null;
+    this.length = 0;
   }
 
   insert(val) {
@@ -18,6 +19,7 @@ class LinkedList {
     node.val = val;
     node.next = this.head;
     this.head = node;
+    this.length += 1;
 
     return this.head.val;
   }
@@ -44,6 +46,7 @@ class LinkedList {
     if (current.val === value){
       newNode.next = this.head;
       this.head = newNode;
+      this.length += 1;
       return newValue;
 
     } else { 
@@ -52,6 +55,7 @@ class LinkedList {
         if (current.next.val === value){
           newNode.next = current.next;
           current.next = newNode;
+          this.length += 1;
           return newValue;
         
         } else {
@@ -71,6 +75,7 @@ class LinkedList {
       if (current.val === value){
         newNode.next = current.next;
         current.next = newNode;
+        this.length += 1;
         return newValue;
 
       } else {
@@ -86,6 +91,7 @@ class LinkedList {
 
     if (!this.head) {
       this.head = node;
+      this.length += 1;
       return val;
     }
 
@@ -94,6 +100,7 @@ class LinkedList {
     while(current){
       if (!current.next){
         current.next = node;
+        this.length += 1;
         return val;
       } else {
         current = current.next;
@@ -101,6 +108,32 @@ class LinkedList {
     }
 
     return val;
+  }
+
+  kthFromEnd(k){
+    let index = (this.length - k) - 1;
+    let current = this.head;
+
+    if(k > this.length) {
+      return 'ERROR, k is greater than length of linked list';
+    }
+
+    if(k === this.length) {
+      return this.head;
+    }
+
+    if(k < 0) {
+      return 'Uh-oh! Negativity is banned';
+    }
+
+    for (let i = 0; i <= index; i++){
+      if (i === index) {
+        return current.next;
+      
+      } else {
+        current = current.next;
+      }
+    }
   }
 
   print() {
