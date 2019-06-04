@@ -32,4 +32,4 @@ I started with reading the challenge carefully, and then went to the whiteboard 
 I started with reading the challenge carefully, and then wrote down my plan in my sketchbook. This challenge took 4 hours and the tests are giving me fits.
 
 UPDATE: Append, insertAfter, insertBefore mob programmed with Jeff, Mike, and myself. This portion took 3.5 hours.
-UPDATE: Kth from Last pair programmed with Jeff, Mike, and myself. This portion took 3.5 hours.
+UPDATE: Kth from Last pair programmed with Jeff, Mike, and myself. This portion took 2 hours.
