@@ -15,7 +15,7 @@ module.exports = class LinkedList {
     return this;
   }
 
-  llMerge(lList1, lList2) {
+  mergeLists(lList1, lList2) {
     if (!lList1.head) {
       throw new Error('Uh-oh! List is not here!')
     }
