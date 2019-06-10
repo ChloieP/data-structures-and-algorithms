@@ -16,4 +16,4 @@ The ```Stack``` instances have only ```push```, ```pop```, and ```peek``` method
 I created a new class for PseudoQueue and two stack properties (stackOne and stackTwo. 
 
 ## Solution
-* ### Whiteboard: 
+* ### Whiteboard: ./assets/queueWithStacks.JPG
