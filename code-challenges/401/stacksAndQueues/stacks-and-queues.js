@@ -15,17 +15,20 @@ class Stack {
   }
 
   push(value) {
-    if(!value) return false;
-
-    let value = new Node(value);
-    value.next = this.top;
+    let node = new Node(value);
+    node.next = this.top;
     this.top = value;
   }
 
   pop() {
-    let val = this.top.val;
-    this.top = this.top.next;
-    return val;
+    if (this.top) {
+      let val = this.top.value;
+      this.top = this.top.next;
+      return val;
+
+    } else {
+      return null;
+    }
   }
 
   peek() {
