@@ -1,6 +1,6 @@
 'use strict'
 
-const Stack = require('../stacksAndQueues/stacks-and-queues').Stack;
+const Stack = require('../queueWithStacks/stacks-and-queues').Stack;
 
 class PseudoQueue {
   constructor() {
