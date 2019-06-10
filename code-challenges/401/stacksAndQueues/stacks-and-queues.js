@@ -27,7 +27,7 @@ class Stack {
       return val;
 
     } else {
-      return null;
+      return null
     }
   }
 
@@ -42,22 +42,22 @@ class Queue {
   }
 
   enqueue(value) {
-    let n = new Node(value);
+    if (!value) return false;
+    let node = new Node(value);
+    let current = this.front;
 
     if(!this.front) {
-      this.front = n;
-
+      this.front = node;
     } else {
-      let b = this.front;
-      while (b.next) {
-        b = b.next;
+      while(current.next) {
+        current = current.next;
       }
-      b.next = n;
+      current.next = node;
     }
   }
 
   dequeue() {
-    if(this.front.value !== null){
+    if(this.front !== null){
       let n = this.front.value;
       this.front = this.front.next;
       return n;
@@ -68,7 +68,7 @@ class Queue {
   }
 
   peek() {
-    return this.front.value;
+    return this.front;
   }
 }
 

@@ -43,17 +43,76 @@ describe ('Stack Class', () => {
 
       expect(stack.top).toEqual(null);
     });
-})
-})
 
+  // 4. Can successfully empty a stack after multiple pops
+    it('can successfully empty a stack after multiple pops', () => {
+      stack.pop();
+      stack.pop();
+      stack.pop();
+      stack.pop();
+      stack.pop();
 
+      expect(stack.top).toEqual(null);
+    });
+  
+  // 5. Can successfully peek the next item on the stack
+    it('can successfully peek the next item on the stack', () => {
+      stack.push(4);
 
-// 4. Can successfully empty a stack after multiple pops
-// 5. Can successfully peek the next item on the stack
-// 7. Can successfully enqueue into a queue
-// 8. Can successfully enqueue multiple values into a queue
-// 9. Can successfully dequeue out of a queue the expected value
-// 10. Can successfully peek into a queue, seeing the expected value
-// 11. Can successfully empty a queue after multiple dequeues
+      expect(stack.top).toEqual(4);
+    });
+  });
+});
+
+describe ('Queue Class', () => {
+  let queue;
+  beforeEach(() => {
+    queue = new Queue();
+  });
+
 // 12. Can successfully instantiate an empty queue
+  it('can successfully instantiate an empty queue', () => {
+    expect(queue.front).toBeNull();
+  });
+
+// 7. Can successfully enqueue into a queue
+  it('can successfully enqueue into a queue', () => {
+    queue.enqueue(1);
+    expect(queue.front.value).toBe(1);
+  });
+
+// 8. Can successfully enqueue multiple values into a queue
+  it('can successfully enqueue multiple values into a queue', () => {
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+
+    expect(queue.front.value).toBe(1);
+    expect(queue.front.next.value).toBe(2);
+    expect(queue.front.next.next.value).toBe(3);
+  });
+
+// 9. Can successfully dequeue out of a queue the expected value
+  it('can successfully dequeue out of a queue the expected value', () => {
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.dequeue();
+
+    expect(queue.front.value).toBe(2);
+  });
+
+// 10. Can successfully peek into a queue, seeing the expected value
+  it('can successfully peek into a queue, seeing the expected value', () => {
+    expect(queue.peek()).toBe(queue.front);
+  });
+
+// 11. Can successfully empty a queue after multiple dequeues
+  it('can successfully empty a queue after multiple dequeues', () => {
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+
+    expect(queue.front).toBeNull();
+  });
 })
+});
