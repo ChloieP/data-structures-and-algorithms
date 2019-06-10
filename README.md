@@ -10,3 +10,5 @@
 4. Linked List Implementation (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/data-structures/linkedList)
 
 5. Stacks And Queues (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/stacksAndQueues)
+
+6. Queue With Stacks (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/queueWithStacks)
