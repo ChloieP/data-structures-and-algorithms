@@ -18,4 +18,4 @@ Your function should take a string as its only argument, and should return a boo
 I created a function called multiBracketValidation(input) and return eda boolean representing whether or not the brackets in the string are balanced. I also used TDD.
 
 ## Solution
-* ### Whiteboard: assets/multi_bracket_validation.JPG
+* ### Whiteboard: ```assets/multi_bracket_validation.JPG```
