@@ -1,10 +1,16 @@
 'use strict';
 
-const Node = require('./node/tree');
+class Node {
+  constuctor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
 
 class BinaryTree{
-  constructor(node) {
-    this.root = node;
+  constructor() {
+    this.root = null;
   }
 
   preOrder() {
@@ -12,13 +18,13 @@ class BinaryTree{
 
     let _walk = node => {
 
-      results.push( node.value );
+      results.push(node.value);
 
-      if( node.left ) _walk( node.left);
+      if(node.left) _walk(node.left);
 
-      if( node.right ) _walk( node.right );
+      if(node.right) _walk(node.right);
 
-    }
+    };
 
     _walk(this.root);
 
@@ -35,7 +41,7 @@ class BinaryTree{
 
       if( node.right ) _walk( node.right );
 
-    }
+    };
 
     _walk(this.root);
 
@@ -52,7 +58,7 @@ class BinaryTree{
 
       results.push( node.value );
 
-    }
+    };
 
     _walk(this.root);
 
@@ -61,8 +67,8 @@ class BinaryTree{
 }
 
 class BinarySearchTree {
-  constuctor(node) {
-    this.root = node;
+  constuctor() {
+    this.root = null;
   }
 
   preOrder() {
@@ -76,7 +82,7 @@ class BinarySearchTree {
 
       if( node.right ) _walk( node.right );
 
-    }
+    };
 
     _walk(this.root);
 
@@ -94,7 +100,7 @@ class BinarySearchTree {
 
       if( node.right ) _walk( node.right );
 
-    }
+    };
 
     _walk(this.root);
 
@@ -111,7 +117,7 @@ class BinarySearchTree {
 
       results.push( node.value );
 
-    }
+    };
 
     _walk(this.root);
 
@@ -128,7 +134,7 @@ class BinarySearchTree {
 
     while ( currentNode ) {
       if ( node.value < currentNode.value ) {
-        if ( !currentNode.left ){ 
+        if ( !currentNode.left ){
           currentNode.left = node;
           break;
         } else {
@@ -136,7 +142,7 @@ class BinarySearchTree {
         }
 
       } else if ( node.value > currentNode.value ) {
-        if ( !currentNode.right ){ 
+        if ( !currentNode.right ){
           currentNode.right = node;
           break;
         } else {
@@ -144,17 +150,26 @@ class BinarySearchTree {
         }
 
       } else {
-          throw new Error( 'Value already exists');
+        throw new Error( 'Value already exists');
       }
-
     }
-
   }
-}
 
   contains(value) {
+    let currentNode = this.root;
 
+    while ( currentNode ) {
+      if ( currentNode.value === value ) { return true; }
+
+      if ( value < currentNode.left) {
+        currentNode = currentNode.left;
+
+      } else {
+        currentNode = currentNode.right;
+      }
+    }
+    return false;
   }
 }
 
-module.exports = {BinarySearchTree, BinaryTree};
+module.exports = {BinarySearchTree, BinaryTree, Node};
