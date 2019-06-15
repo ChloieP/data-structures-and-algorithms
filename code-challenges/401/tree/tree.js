@@ -1,20 +1,27 @@
 'use strict';
 
 class Node {
-  constuctor(value) {
+  constructor(value) {
     this.value = value;
     this.left = null;
     this.right = null;
   }
 }
 
-class BinaryTree{
+class BinaryTree {
   constructor() {
     this.root = null;
   }
 
   preOrder() {
     let results = [];
+
+    let tree = new BinaryTree();
+    tree.root = new Node(1);
+    tree.root.left = new Node (2);
+    tree.root.right = new Node (3);
+    tree.root.left.left = new Node (4);
+    tree.root.left.right = new Node (5);
 
     let _walk = node => {
 
@@ -28,6 +35,8 @@ class BinaryTree{
 
     _walk(this.root);
 
+    console.log(results, 'marco polo');
+
     return results;
   }
 
@@ -66,62 +75,10 @@ class BinaryTree{
   }
 }
 
-class BinarySearchTree {
-  constuctor() {
+class BinarySearchTree extends BinaryTree {
+  constructor() {
+    super();
     this.root = null;
-  }
-
-  preOrder() {
-    let results = [];
-
-    let _walk = node => {
-
-      results.push( node.value );
-
-      if( node.left ) _walk( node.left);
-
-      if( node.right ) _walk( node.right );
-
-    };
-
-    _walk(this.root);
-
-    return results;
-  }
-
-
-  inOrder() {
-    let results = [];
-
-    let _walk = node => {
-      if( node.left ) _walk( node.left);
-
-      results.push( node.value );
-
-      if( node.right ) _walk( node.right );
-
-    };
-
-    _walk(this.root);
-
-    return results;
-  }
-
-  postOrder() {
-    let results = [];
-
-    let _walk = node => {
-      if( node.left ) _walk( node.left);
-
-      if( node.right ) _walk( node.right );
-
-      results.push( node.value );
-
-    };
-
-    _walk(this.root);
-
-    return results;
   }
 
   add(node) {
@@ -150,7 +107,7 @@ class BinarySearchTree {
         }
 
       } else {
-        throw new Error( 'Value already exists');
+        return 'Value already exists';
       }
     }
   }
