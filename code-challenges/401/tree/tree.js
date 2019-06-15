@@ -2,26 +2,114 @@
 
 const Node = require('./node/tree');
 
+class BinaryTree{
+  constructor(node) {
+    this.root = node;
+  }
+
+  preOrder() {
+    let results = [];
+
+    let _walk = node => {
+
+      results.push( node.value );
+
+      if( node.left ) _walk( node.left);
+
+      if( node.right ) _walk( node.right );
+
+    }
+
+    _walk(this.root);
+
+    return results;
+  }
+
+  inOrder() {
+    let results = [];
+
+    let _walk = node => {
+      if( node.left ) _walk( node.left);
+
+      results.push( node.value );
+
+      if( node.right ) _walk( node.right );
+
+    }
+
+    _walk(this.root);
+
+    return results;
+  }
+
+  postOrder() {
+    let results = [];
+
+    let _walk = node => {
+      if( node.left ) _walk( node.left);
+
+      if( node.right ) _walk( node.right );
+
+      results.push( node.value );
+
+    }
+
+    _walk(this.root);
+
+    return results;
+  }
+}
+
 class BinarySearchTree {
   constuctor(node) {
     this.root = node;
   }
 
-  //pre and post, just reorder inOrder and ding fries are done
+  preOrder() {
+    let results = [];
+
+    let _walk = node => {
+
+      results.push( node.value );
+
+      if( node.left ) _walk( node.left);
+
+      if( node.right ) _walk( node.right );
+
+    }
+
+    _walk(this.root);
+
+    return results;
+  }
+
+
   inOrder() {
     let results = [];
 
     let _walk = node => {
-      //L Ro R
-
-      //L
       if( node.left ) _walk( node.left);
 
-      //Ro
       results.push( node.value );
 
-      //R
       if( node.right ) _walk( node.right );
+
+    }
+
+    _walk(this.root);
+
+    return results;
+  }
+
+  postOrder() {
+    let results = [];
+
+    let _walk = node => {
+      if( node.left ) _walk( node.left);
+
+      if( node.right ) _walk( node.right );
+
+      results.push( node.value );
 
     }
 
@@ -69,4 +157,4 @@ class BinarySearchTree {
   }
 }
 
-module.exports = BinarySearchTree;
+module.exports = {BinarySearchTree, BinaryTree};
