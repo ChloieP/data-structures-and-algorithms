@@ -2,12 +2,12 @@
 
 let reverseArray = (arr) => { 
   let initial = 0;
-  let lastElement = arr.length -1;
+  let lastElement = arr.length - 1;
 
-  while (initial < lastElement){
-    let x = arr[lastElement];
-    arr[lastElement] = arr[initial];
-    arr [initial] = x;
+  while (initial <= lastElement){
+    let x = arr[initial];
+    arr[initial] = arr[lastElement];
+    arr [lastElement] = x;
     initial ++;
     lastElement --;
   }
@@ -15,5 +15,5 @@ let reverseArray = (arr) => {
   return arr;
 };
 
-
+module.exports = reverseArray;
 
