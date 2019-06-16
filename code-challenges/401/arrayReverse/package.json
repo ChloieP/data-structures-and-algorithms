@@ -1,0 +1,24 @@
+{
+  "name": "array-reverse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "array-reverse.js",
+  "scripts": {
+    "lint": "eslint \"**/*.js\"",
+    "test": "jest --verbose",
+    "test-watch": "jest --watchAll --verbose"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^24.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "lint": "^0.6.5"
+  }
+}
