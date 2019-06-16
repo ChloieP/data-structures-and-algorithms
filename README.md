@@ -12,3 +12,9 @@
 5. Stacks And Queues (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/stacksAndQueues)
 
 6. Queue With Stacks (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/queueWithStacks)
+
+7. First-In-First-Out Animal Shelter (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/fifoAnimalShelter)
+
+8. Multi-Bracket Validation (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/multiBracketValidation)
+
+9. Binary Tree and Binary Search Tree (https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/tree)
