@@ -16,13 +16,6 @@ class BinaryTree {
   preOrder() {
     let results = [];
 
-    //let tree = new BinaryTree();
-    //tree.root = new Node(1);
-    //tree.root.left = new Node (2);
-    //tree.root.right = new Node (3);
-    //tree.root.left.left = new Node (4);
-    //tree.root.left.right = new Node (5);
-
     let _walk = node => {
 
       results.push(node.value);
@@ -130,32 +123,32 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
-console.log('Testing instantiating node');
-let node00 = new Node(10);
-console.log(node00);
-console.log('');
+// console.log('Testing instantiating node');
+// let node00 = new Node(10);
+// console.log(node00);
+// console.log('');
 
-console.log('Testing instantiating trees');
-let bst = new BinarySearchTree;
-console.log(bst);
-console.log('');
+// console.log('Testing instantiating trees');
+// let bst = new BinarySearchTree;
+// console.log(bst);
+// console.log('');
 
-console.log('Testing adding one values');
-bst.add(12);
-console.log(bst);
-console.log('');
+// console.log('Testing adding one values');
+// bst.add(12);
+// console.log(bst);
+// console.log('');
 
-console.log('Testing adding multiple values');
-bst.add(11);
-bst.add(5);
-bst.add(8);
-bst.add(20);
-console.log(bst);
-console.log('');
+// console.log('Testing adding multiple values');
+// bst.add(11);
+// bst.add(5);
+// bst.add(8);
+// bst.add(20);
+// console.log(bst);
+// console.log('');
 
-console.log('Testing preorder traversal');
-console.log(bst.preOrder());
-console.log('');
+// console.log('Testing preorder traversal');
+// console.log(bst.preOrder());
+// console.log('');
 
 
 module.exports = {BinarySearchTree, BinaryTree, Node};

@@ -1,32 +1,6 @@
 'use strict';
 const tree = require('../tree');
 
-describe ('Binary Tree Class', () => {
-  let binaryTree;
-  beforeEach(() => {
-    binaryTree = new tree.BinaryTree();
-  });
-
-  describe('binary trees', () => {
-
-    it('Can successfully instantiate an empty tree', () => {
-      expect(binaryTree.root).toBe(null);
-    });
-
-    it('Can successfully return a collection from a preorder traversal', () => {
-      expect(binaryTree.preOrder(15)).toBe([10, 15, 20]);
-    });
-
-    it('Can successfully return a collection from a inorder traversal', () => {
-      expect(binaryTree.inOrder(1)).toBe([10, 15, 20]);
-    });
-
-    it('Can successfully return a collection from a postorder traversal', () => {
-      expect(binaryTree.postOrder(25)).toBe([10, 15, 20]);
-    });
-  });
-});
-
 describe ('Binary Search Tree Class', () => {
   let binarySearchTree;
   beforeEach(() => {
@@ -37,14 +11,46 @@ describe ('Binary Search Tree Class', () => {
 
     it('Can successfully instantiate a tree with a single root node', () => {
       binarySearchTree.add(15);
-      expect(binarySearchTree.root).toBe(15);
+      expect(binarySearchTree.root.value).toBe(15);
     });
 
     it('Can successfully add a left child and right child to a single root node', () => {
+      binarySearchTree.add(15);
       binarySearchTree.add(10);
       binarySearchTree.add(20);
-      expect(binarySearchTree.node).toBe(10).toBeTruthy();
-      expect(binarySearchTree.node).toBe(20).toBeTruthy();
+      expect(binarySearchTree.root.left.value).toBe(10);
+      expect(binarySearchTree.root.right.value).toBe(20);
     });
   });
 });
+
+describe ('Binary Tree Class', () => {
+  let binarySearchTree;
+  beforeEach(() => {
+    binarySearchTree = new tree.BinarySearchTree();
+
+    binarySearchTree.add(5);
+    binarySearchTree.add(10);
+    binarySearchTree.add(15);
+    // binarySearchTree.add(20);
+    // binarySearchTree.add(25);
+    // binarySearchTree.add(30);
+    // binarySearchTree.add(35);
+  });
+
+  describe('binary trees', () => {
+
+    it('Can successfully return a collection from a preorder traversal', () => {
+      expect(binarySearchTree.preOrder()).toStrictEqual([5, 10, 15 ]);
+    });
+
+    it('Can successfully return a collection from a inorder traversal', () => {
+      expect(binarySearchTree.inOrder()).toStrictEqual([5, 10, 15]);
+    });
+
+    it('Can successfully return a collection from a postorder traversal', () => {
+      expect(binarySearchTree.postOrder()).toStrictEqual([15, 10, 5]);
+    });
+  });
+});
+
