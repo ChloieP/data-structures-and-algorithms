@@ -2,26 +2,26 @@
 
 class Node {
   constructor(value) {
-    this.value = value;
+    this.value = value || null;
     this.left = null;
     this.right = null;
   }
 }
 
 class BinaryTree {
-  constructor() {
-    this.root = null;
+  constructor(node) {
+    this.root = node || null;
   }
 
   preOrder() {
     let results = [];
 
-    let tree = new BinaryTree();
-    tree.root = new Node(1);
-    tree.root.left = new Node (2);
-    tree.root.right = new Node (3);
-    tree.root.left.left = new Node (4);
-    tree.root.left.right = new Node (5);
+    //let tree = new BinaryTree();
+    //tree.root = new Node(1);
+    //tree.root.left = new Node (2);
+    //tree.root.right = new Node (3);
+    //tree.root.left.left = new Node (4);
+    //tree.root.left.right = new Node (5);
 
     let _walk = node => {
 
@@ -34,8 +34,6 @@ class BinaryTree {
     };
 
     _walk(this.root);
-
-    console.log(results, 'marco polo');
 
     return results;
   }
@@ -81,7 +79,10 @@ class BinarySearchTree extends BinaryTree {
     this.root = null;
   }
 
-  add(node) {
+  add(value) {
+
+    let node = new Node(value);
+
     if(!this.root) {
       this.root = node;
       return node;
@@ -128,5 +129,33 @@ class BinarySearchTree extends BinaryTree {
     return false;
   }
 }
+
+console.log('Testing instantiating node');
+let node00 = new Node(10);
+console.log(node00);
+console.log('');
+
+console.log('Testing instantiating trees');
+let bst = new BinarySearchTree;
+console.log(bst);
+console.log('');
+
+console.log('Testing adding one values');
+bst.add(12);
+console.log(bst);
+console.log('');
+
+console.log('Testing adding multiple values');
+bst.add(11);
+bst.add(5);
+bst.add(8);
+bst.add(20);
+console.log(bst);
+console.log('');
+
+console.log('Testing preorder traversal');
+console.log(bst.preOrder());
+console.log('');
+
 
 module.exports = {BinarySearchTree, BinaryTree, Node};
