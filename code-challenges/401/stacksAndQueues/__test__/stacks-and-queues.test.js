@@ -103,7 +103,8 @@ describe ('Queue Class', () => {
 
 // 10. Can successfully peek into a queue, seeing the expected value
   it('can successfully peek into a queue, seeing the expected value', () => {
-    expect(queue.peek()).toBe(queue.front);
+    queue.enqueue(1)
+    expect(queue.peek()).toBe(1);
   });
 
 // 11. Can successfully empty a queue after multiple dequeues
