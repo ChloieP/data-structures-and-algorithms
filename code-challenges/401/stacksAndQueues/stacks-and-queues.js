@@ -39,6 +39,7 @@ class Stack {
 class Queue {
   constructor() {
     this.front = null;
+    this.back = null;
   }
 
   enqueue(value) {
@@ -48,7 +49,7 @@ class Queue {
       this.back = node;
     } else {
       this.back.next = node;
-      this.back = this.back.next
+      this.back = this.back.next;
     }
   }
 
