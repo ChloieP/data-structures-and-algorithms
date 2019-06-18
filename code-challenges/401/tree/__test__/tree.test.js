@@ -51,6 +51,14 @@ describe ('Binary Tree Class', () => {
     it('Can successfully return a collection from a postorder traversal', () => {
       expect(binarySearchTree.postOrder()).toStrictEqual([15, 10, 5]);
     });
+
+    it('breadth first console logs the first node in the tree', () => {  
+      expect(binarySearchTree.breadthFirst()).toEqual([]);
+    });
+
+    it('breadth first has not a tree to walk', () => {
+      expect(binarySearchTree.breadthFirst(null)).toBeFalsy();
+    });
   });
 });
 

@@ -64,6 +64,28 @@ class BinaryTree {
 
     return results;
   }
+
+  breadthFirst(tree) {
+    let results = [];
+
+    if(tree === null){
+      return false;
+    };
+
+    let queue = () => { 
+      while(queue !== null){
+        let node = queue.dequeue;
+        console.log(node.value);
+        if(node.left !== null){
+          queue.enqueue(node.value);
+        };
+        if(node.right !== null){
+          queue.enqueue(node.value);
+        };
+      };
+    };
+  return results;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
