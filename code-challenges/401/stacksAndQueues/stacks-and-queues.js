@@ -42,17 +42,13 @@ class Queue {
   }
 
   enqueue(value) {
-    if (!value) return false;
-    let node = new Node(value);
-    let current = this.front;
-
-    if(!this.front) {
+    let node = new Node(value, null);
+    if(this.back === null) {
       this.front = node;
+      this.back = node;
     } else {
-      while(current.next) {
-        current = current.next;
-      }
-      current.next = node;
+      this.back.next = node;
+      this.back = this.back.next
     }
   }
 
@@ -68,7 +64,7 @@ class Queue {
   }
 
   peek() {
-    return this.front;
+    return this.front.value;
   }
 }
 
