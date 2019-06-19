@@ -27,5 +27,12 @@ UPDATE: 6/18
 
 I created a breadth-first traversal method in the Binary Tree Class that prints each node visited. I decided to see if the root has a value and if it does, print it. Then I wanted to enqueue the root's children, look at left child, enqueue its children, print it and then dequeue it.  I repeated this sequence for the left child on the second layer and continued the whole pattern.
 
+UPDATE: 6/19
+
+I created a findMaximumValue function in the Binary Tree Class that finds the maximum value in the tree.
+
 ##Whiteboard (June 18 requirement)
 ![Whiteboard](assets/breadth_first.JPG)
+
+##Whiteboard (June 19 requirement)
+![Whiteboard](assets/find_maximum_value.JPG)
