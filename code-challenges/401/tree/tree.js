@@ -86,6 +86,22 @@ class BinaryTree {
     };
   return results;
   }
+
+  findMaximumValue(tree) {
+    let findMax = tree.root.value;
+    let left = tree.root.left;
+    let right = tree.root.right;
+
+    if(left > findMax) {
+      findMax = left;
+    };
+
+    if(right > findMax) {
+      findMax = right;
+    };
+
+    return findMax;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {

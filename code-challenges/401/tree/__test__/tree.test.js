@@ -59,6 +59,16 @@ describe ('Binary Tree Class', () => {
     it('breadth first has not a tree to walk', () => {
       expect(binarySearchTree.breadthFirst(null)).toBeFalsy();
     });
+
+    it('findMaximumValue has a root value', () => {
+      // expect(binarySearchTree.findMaximumValue(truthy)).toBeTruthy();
+    });
+
+    it('findMaximumValue has a left value', () => {
+      // expect(binarySearchTree.root.left.value).toBe(10);
+      // expect(binarySearchTree.root.right.value).toBe(15);
+    });
+
   });
 });
 
