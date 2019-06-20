@@ -18,9 +18,10 @@
 8. [Multi-Bracket Validation](https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/multiBracketValidation)
 
 9. [Binary Tree and Binary Search Tree](https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/tree)
-  - preOrder
-  - postOrder
-  - inOrder
-  - add
-  - contains
-  - find Maximum Value (Binary Tree NOT Binary Search Tree)
+
+   - preOrder
+   - postOrder
+   - inOrder
+   - add
+   - contains
+   - find Maximum Value (Binary Tree NOT Binary Search Tree)
