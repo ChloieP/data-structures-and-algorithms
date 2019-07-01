@@ -23,5 +23,8 @@ InsertionSort(int[] arr)
       arr[j + 1] <-- temp
 ```
 ## Solution
+[Solution Code](https://github.com/ChloieP/data-structures-and-algorithms/blob/master/code-challenges/401/insertionSort/insertionSort.js)
+
+## Image(s)
 
 [Insertion Sort](./assets/insertionSortVisual.jpg)
