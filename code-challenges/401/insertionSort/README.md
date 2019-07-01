@@ -24,4 +24,4 @@ InsertionSort(int[] arr)
 ```
 ## Solution
 
-[Insertion Sort](./assets/insertionSort.jpg)
+[Insertion Sort](./assets/insertionSortVisual.jpg)
