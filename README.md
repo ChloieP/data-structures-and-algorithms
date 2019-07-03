@@ -29,3 +29,5 @@
 10. [Insertion Sort](https://github.com/ChloieP/data-structures-and-algorithms/blob/master/code-challenges/401/insertionSort/README.md)
 
 11. [Merge Sort](https://github.com/ChloieP/data-structures-and-algorithms/blob/master/code-challenges/401/mergeSort/README.md)
+
+12. [Quick Sort](https://github.com/ChloieP/data-structures-and-algorithms/blob/master/code-challenges/401/quickSort/README.md)
