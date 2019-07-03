@@ -2,7 +2,7 @@
 
 Quick sort is a divide and conquer algorithm that picks an element as pivot and partitions the array around the pivot. The pivot may be chosen in one of these ways.
 * Always pick first element as pivot.
-* Always pick last element as pivot (implemented below)
+* Always pick last element as pivot.
 * Pick a random element as pivot.
 * Pick median as pivot.
 
@@ -23,28 +23,36 @@ Quick sort is a divide and conquer algorithm that picks an element as pivot and 
 
   - Let's use an unsorted array for an example. 
   
-      - (Whiteboard: unsorted array of 8 elements - [14, 31, 26, 3, 11, 34, 19, 99])
+      - (Whiteboard: unsorted array of 8 elements - [6, 2, 5, 3, 8, 7, 1, 4])
   
-  - Merge sort sees there are 6 items and divides them into two halves.
+  - Pick a pivot. This could be randomly selected or the middle one.
 
-      - (Whiteboard: [14, 31, 26, 3] [11, 34, 19, 99])
+      - (Whiteboard: Write [3])
 
-  - Divide these two arrays into halves.
+  - Start pointers at left and right.
   
-      - (Whiteboard: 
-      [14, 31] [26, 3] [11, 34] [19, 99])
+      - (Whiteboard: Please reference visual)
   
-  - Do you see the iterative process now? Can you guess what we are going to do next? Briefly pause to let students ponder and respond. Then, divide these 4 arrays into halves.
+  - While the value at the left pointer in the array is less than the pivot value, move the left pointer to the right (add 1). Continue until the value at the left pointer is greater than or equal to the pivot value.
 
-    - (Whiteboard: [14] [31] [26] [3] [11] [34] [19] [99])
+    - (Whiteboard: Please reference visual)
 
-  - Now, reverse the process by combining them in the exact way they were broken down.
+  - While the value at the right pointer in the array is greater than the pivot value, move the right pointer to the left (subtract 1). Continue until the value at the right pointer is less than or equal to the pivot value.
 
-    - (Whiteboard: [14] and [31] are sorted, [3] comes before [26], so put [3] first, [11] and [34] are sorted, [19] and [99] are sorted.)
+    - (Whiteboard: Please reference visual)
   
-  - Iterate through the combining phase again and merge them in sorted order so that the end result looks like:
+  - If the left pointer is less than or equal to the right pointer, then swap the values at these locations in the array.
 
-    - (Whiteboard: [3, 11, 14, 19, 26, 31, 34, 99])
+    - (Whiteboard: Please reference visual)
+
+  - Move the left pointer to the right by one and the right pointer to the left by one.
+
+      - (Whiteboard: Please reference visual)
+
+
+  - If the left pointer and the right pointer don't meet, go to step 1.
+
+      - (Whiteboard: Please reference visual)
 
 ## Diagram
 
