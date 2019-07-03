@@ -19,7 +19,7 @@ Quick sort is a divide and conquer algorithm that picks an element as pivot and 
 
 * So the Big HOW. How does this work? 
 
-  - The key process in quickSort is ```partition()```. Target of partitions is, given an array and an element of the array as pivot, put x (the element) at its correct position in a sorted array and put all the smaller elements (smaller than x) before x, and put all the greater elements (greater than x) after x. All this should be done in linear time..
+  - The key process in quickSort is ```partition()```. Target of partitions is, given an array and an element of the array as pivot, put x (the element) at its correct position in a sorted array and put all the smaller elements (smaller than x) before x, and put all the greater elements (greater than x) after x. All this should be done in linear time.
 
   - Let's use an unsorted array for an example. 
   
