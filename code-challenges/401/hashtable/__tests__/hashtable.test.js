@@ -1,6 +1,6 @@
 'use strict';
 
-const { HashTable, LinkedList } = require('../hashTable');
+const { HashTable } = require('../hashTable');
 
 describe('Hash Table', () => {
   it('should construct a Hash Table', () => {
@@ -18,7 +18,33 @@ describe('Hash Table', () => {
     expect(hashTable.buckets.length).toBe(expectedSize);
   });
 
-  describe('hash(key)', () => {
+  let hashTable = new HashTable;
+  describe('tests as stated in assignment', () => {
+    
+    it('Adding a key/value to your hashtable results in the value being in the data structure', () => {
+      hashTable.add('Chloie', '42');
+      expect(hashTable.contains('Chloie')).toBeTruthy();
+    });
+
+    it('Retrieving based on a key returns the value stored', () => {
+      expect(hashTable.get('Chloie')).toEqual('42');
+    });
+
+    it('Successfully returns null for a key that does not exist in the hashtable', () => {
+      expect(hashTable.get('Medusa')).toBeNull();
+    });
+
+    it('Successfully handles a collision within the hashtable', () => {
+      expect(()=> { 
+        hashTable.add('Chloie', '42')}).toThrowError('Key already in use');
+    });
+
+    it('Successfully retrieves a value from a bucket within the hashtable that has a collision', () => {
+      expect(hashTable.get('Chloie')).toEqual('42');
+    });
+  });
+
+  describe('Successfully hash(key) to an in-range value', () => {
     it('should hash cat to 3 with 5 buckets', () => {
       //Arrange
       let expectedHash = 3;
@@ -35,7 +61,7 @@ describe('Hash Table', () => {
     it('should hash foo to 1 with 5 buckets', () => {
       //Arrange
       let expectedHash = 1;
-      let key = 'foot';
+      let key = 'foo';
       let hashTable = new HashTable(5);
 
       //Act
@@ -45,6 +71,4 @@ describe('Hash Table', () => {
       expect(result).toBe(expectedHash);
     });
   });
-
-//Other hash constructor tests: 1. Default bucket size, 2. Check for default value of number - anything not number returns error, 3. String for keys, not string throws error.
 });
