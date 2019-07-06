@@ -41,7 +41,7 @@ describe('Hash Table', () => {
 
     it('Successfully retrieves a value from a bucket within the hashtable that has a collision', () => {
       expect(hashTable.get('Chloie')).toEqual('42');
-    });
+    });  
   });
 
   describe('Successfully hash(key) to an in-range value', () => {
