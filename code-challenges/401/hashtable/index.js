@@ -2,6 +2,8 @@
 
 const { HashTable } = require('./hashTable');
 
+module.exports = HashTable;
+
 let hashTable = new HashTable(5);
 
 hashTable.add('cat', 42);
