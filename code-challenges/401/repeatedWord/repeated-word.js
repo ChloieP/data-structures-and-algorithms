@@ -1,91 +1,24 @@
 'use strict';
 
-class Node {
-  constructor(value){
-    this.value = value;
-    this.next = null;
-  }
-}
+const HashTable = require('../hashtable/hashtable');
 
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
+const repeatedWord = (string) => {
+  if (typeof string !== 'string') return 'Error! Input must be a string.';
+  
+  let words = string.toLowerCase().replace( /([^\s\w])/g, '').split(' ');
+  let hash = new HashTable.HashTable(1024);
 
-  add(value){
-    if(!value) throw new Error('Invalid value');
-
-    const node = new Node(value);
-
-    if(!this.head){
-      this.head = node;
-      return;
-    }
-
-    let current = this.head;
-    while(current.next){
-      current = current.next;
-    }
-
-    current.next = node;
-  }
-
-  getWithKey(key) {
-    if(!this.head) return;
-
-    let current = this.head;
-
-    while(current){
-      if(current.value[0] === key) return current.value[1];
-      current = current.next;
-    }
-
-    return;
-  }
-
-  values() {
-    let values = [];
-    let current = this.head;
-
-    while(current) {
-      values.push(current.value);
-      current = current.next;
-    }
-
-    return values;
-  }
-};
-
-const hash = word => {
-  let sum = 0;
-  for(let i = 0; i < word.length; i++){
-    sum += word.charCodeAt(i);
-  }
-
-  const product = sum * 599;
-  const index = Math.floor(product % 1024);
-
-  return index;
-};
-
-const repeatedWord = string => {
-  const wordArray = string.split('');
-  const hashTable = Array(1024).fill(new LinkedList);
-
-  let result = null;
-  for (let i = 0; i < wordArray.length; i++){
-    const regex = /[a-z]+/gi;
-    const word = wordArray[i].toLowerCase().match(regex)[0];
-    const index = hash[word];
-
-    if(hashTable[index].includes[word]) {
-      result = word;
+  for (let i = 0; i < words.length; i++) {
+    if(hash.contains(words[i])) {
+      return words[i];
 
     } else {
-      hashTable[index].insert(word);
+      hash.add(words[i], i);
     }
   }
-  return result;
+   return null;
 };
 
-module.exports = { LinkedList, hash, repeatedWord };
+module.exports = repeatedWord;
+
+
