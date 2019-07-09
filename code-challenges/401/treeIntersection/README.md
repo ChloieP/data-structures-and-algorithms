@@ -13,4 +13,4 @@ Find common values in 2 binary trees.
 
 ## Solution
 
-[Tree Intersection UML](./assets/tree_insertion.JPG)
+[Tree Intersection UML](./assets/tree_intersection.JPG)
