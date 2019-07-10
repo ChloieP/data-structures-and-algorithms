@@ -33,3 +33,5 @@
 12. [Quick Sort](https://github.com/ChloieP/data-structures-and-algorithms/blob/master/code-challenges/401/quickSort/README.md)
 
 13. [Hash Table](https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/hashtable)
+
+14. [Left Join](https://github.com/ChloieP/data-structures-and-algorithms/tree/master/code-challenges/401/leftJoin)
