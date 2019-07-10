@@ -9,14 +9,14 @@ const leftJoin = (synHashMap, antHashMap) => {
   return output;
 };
 
-const leftJoinWord = (wordSyn, wordAnt) => {
+const leftJoinObj = (stringSyn, stringAnt) => {
   let output = [];
-  for (let word in wordSyn) {
-    let synonym = wordSyn[word],
-      antonym = wordAnt.hasOwnProperty(word) ? wordAnt[word] : null;
+  for (let word in stringSyn) {
+    let synonym = stringSyn[word],
+      antonym = stringAnt.hasOwnProperty(word) ? stringAnt[word] : null;
     output.push([word, synonym, antonym]);
   }
   return output;
 };
 
-module.exports = {leftJoin, leftJoinKeys};
+module.exports = {leftJoin, leftJoinObj};
