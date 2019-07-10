@@ -18,10 +18,10 @@ Implement a simplified Left Join for 2 Hashmaps.
 
 
 ## Approach & Efficiency
-<!-- * The worst case scenario for repeatedWord starts as O(log n) but presents an O(1) solution.
+* The big O for sapce and time in Left Join is O(n).
 
-* I pulled in the hash table lab from last week. I then used ```repeatedWord``` to splits the lengthy string into an array of words by splitting the string at each space. Then the word is forced into lower case and parsed for letters. The indexes are inspected for a match. If it is a match, then the word is returned since a collision is produced, other wise the word is added to the array. If no matches are found in the string, null is returned (edge case coverage). -->
+* I studied the code challenge and began to think about this in terms of an array. I was focused on synonym, antonym, and null. As I pondered this I began thinking of declaring the inital function and built the algorithm and the code through the idea of speaking to a 'rubber duck' about the challenge. As I spoke, I wrote and the algorithm was generated. From there I build my pseudocode and from that the code. 
 
 ## Solution
 
-[Repeated Word UML](./assets/repeated_word.JPG)
+[Left Join UML](./assets/left_join.JPG)
