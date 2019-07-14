@@ -27,10 +27,12 @@ The graph should be represented as an adjacency list, and should include the fol
   * Returns the total number of nodes in the graph
 
 ## Approach & Efficiency
-* The worst case scenario for repeatedWord starts as O(log n) but presents an O(1) solution.
+* I followed the demo in class and then completed unfinished tasks based upon my learning there. As I performed the required testing, I realized that weight needed to be considered in a couple of the methods and implemented that. 
 
-* I pulled in the hash table lab from last week. I then used ```repeatedWord``` to splits the lengthy string into an array of words by splitting the string at each space. Then the word is forced into lower case and parsed for letters. The indexes are inspected for a match. If it is a match, then the word is returned since a collision is produced, other wise the word is added to the array. If no matches are found in the string, null is returned (edge case coverage).
+* There is plentiful online documentation for the search string 'graph implementation javascript.' It is my understanding that if I truly understand graph then the rest of the DSA is wide-open to my understanding. I thoroughly enjoyed graph and its logic pattern. I think had I learned graph first, then the other DSA challenges would have been more readily learned.
+
+* I believe the time and space complexity for graph is O(V+E).
 
 ## Solution
 
-[Repeated Word UML](./assets/repeated_word.JPG)
+[Graph Diagram](./assets/graph_diagram.JPG)
