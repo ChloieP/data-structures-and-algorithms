@@ -16,6 +16,7 @@ class Edge {
 class Graph {
   constructor() {
     this._adjacencyList = new Map();
+    this.size = 0;
   }
 
   addValue(value) {
@@ -24,9 +25,11 @@ class Graph {
 
   addNode(node){
     this._adjacencyList.set(node, []);
+    this.size++;
+    return node;
   }
 
-  addDirectedEdge(startNode, endNode, weight = 0) {
+  addEdge(startNode, endNode, weight = 0) {
     if(!this._adjacencyList.has(startNode) || !this._adjacencyList.has(endNode)){
       throw new Error('ERROR! Invalid nodes.');
     }
@@ -36,16 +39,16 @@ class Graph {
   }
 
   addBiDirectionalEdge(node_a, node_b, weight = 0){
-    this.addDirectedEdge(node_a, node_b, weight);
-    this.addDirectedEdge(node_a, node_b, weight);
+    this.addEdge(node_a, node_b, weight);
+    this.addEdge(node_a, node_b, weight);
   }
 
-  getNeighbors(node){
+  getNeighbors(node, weight = 0){
     if(!this._adjacencyList.has(node)){
       throw new Error('ERROR! Invalid node.', node);
     }
 
-    return [...this._adjacencyList.get(node)];
+    return [...this._adjacencyList.get(node, weight)];
   }
 
   pathTo(startNode, goalNode){
@@ -80,13 +83,18 @@ class Graph {
         parentPath.set(neighborNode, currentNode);
         }
       }
-    }
-  
+  }
 
-  prettyPrintAdjacencyList(){
-    //iterate over all key in map,
-    //for each key, print to screen ex. console logs
-    //print node in all edges
+  getNodes() {
+    if(this.size !== 0) {
+      return this._adjacencyList.keys();
+    }
+
+    else return null;
+  }
+  
+  getSize() {
+    return this.size;
   }
 }
 
@@ -108,15 +116,15 @@ graph.addNode(three);
 graph.addNode(oh);
 graph.addNode(niiiine);
 
-graph.addDirectedEdge(eight, six);
-graph.addDirectedEdge(eight, five);
-graph.addDirectedEdge(six, seven);
-graph.addDirectedEdge(seven, five);
-graph.addDirectedEdge(five, three);
-graph.addDirectedEdge(three, oh);
-graph.addDirectedEdge(oh, niiiine);
-graph.addDirectedEdge(niiiine, eight);
+graph.addEdge(eight, six);
+graph.addEdge(eight, five);
+graph.addEdge(six, seven);
+graph.addEdge(seven, five);
+graph.addEdge(five, three);
+graph.addEdge(three, oh);
+graph.addEdge(oh, niiiine);
+graph.addEdge(niiiine, eight);
 
 console.log(graph.getNeighbors(eight));
 
-module.exports = Graph;
+module.exports = { Node, Edge, Graph };
