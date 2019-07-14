@@ -30,12 +30,13 @@ class Graph {
   }
 
   addEdge(startNode, endNode, weight = 0) {
-    if(!this._adjacencyList.has(startNode) || !this._adjacencyList.has(endNode)){
+    if(!this._adjacencyList.has(startNode) || !this._adjacencyList.has(endNode))
       throw new Error('ERROR! Invalid nodes.');
-    }
     
-    const adjacencies = this._adjacencyList.get(startNode);
+    const adjacencies = this._adjacencyList.get(startNode, weight);
     adjacencies.push(new Edge(endNode, weight));
+
+    return adjacencies;
   }
 
   addBiDirectionalEdge(node_a, node_b, weight = 0){
@@ -43,12 +44,12 @@ class Graph {
     this.addEdge(node_a, node_b, weight);
   }
 
-  getNeighbors(node, weight = 0){
+  getNeighbors(node){
     if(!this._adjacencyList.has(node)){
       throw new Error('ERROR! Invalid node.', node);
     }
 
-    return [...this._adjacencyList.get(node, weight)];
+    return [...this._adjacencyList.get(node)];
   }
 
   pathTo(startNode, goalNode){
