@@ -97,6 +97,39 @@ class Graph {
   getSize() {
     return this.size;
   }
+
+  breadthFirst(startNode) {
+    let queue = [];
+    let visitedSet = new Set();
+
+    queue.unshift(startNode);
+    visitedSet.add(startNode);
+
+    if(visitedSet === 0){
+      return null;
+    }
+
+    while(queue.length){
+      let current = queue.pop;
+      visitedSet.add(current);
+
+      let neighbors = this.getNeighbors(current);
+
+      for(let neighbor of neighbors){
+        let neighborhood = neighbor.node;
+
+        if(visitedSet.has(neighborhood))
+          continue;
+        
+        else 
+          visitedSet.add(neighborhood);
+
+        queue.unshift(neighborhood);
+      }
+    }
+
+    return visitedSet;
+  }
 }
 
 const graph = new Graph();

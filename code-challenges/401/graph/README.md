@@ -36,3 +36,4 @@ The graph should be represented as an adjacency list, and should include the fol
 ## Solution
 
 [Graph Diagram](./assets/graph_diagram.JPG)
+[Breadth First Traversal](./assets/breadth-first-graph.JPG)
