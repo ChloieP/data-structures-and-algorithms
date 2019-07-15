@@ -64,5 +64,36 @@ describe('The Joy Of Graph', () => {
 
     expect(graph.getNodes()).toBeNull();
   });
+});
 
+describe('Breadth First Traversal', () => {
+  it('can, in order, return the nodes visited', () => {
+    graph.addNode(1);
+    graph.addNode(3);
+    graph.addNode(5);
+    graph.addEdge(1,5);
+    graph.addEdge(5,3);
+    graph.addEdge(3,1);
+
+    expect(graph.breadthFirst(1)).toBeInstanceOf(Set);
+    expect(graph.breadthFirst(1)).toContain(1, 5, 3);
+  });
+
+  it('can return null if this is a nodeless graph', () => {
+    let graph = new grid.Graph();
+
+    expect(graph.breadthFirst()).toBeNull();
+  });
+
+  it('can return nodes in order if the edges are weighted', () => {
+    graph.addNode(1);
+    graph.addNode(3);
+    graph.addNode(5);
+    graph.addEdge(1,5, 'Jamaica');
+    graph.addEdge(5,3, 'Dominica');
+    graph.addEdge(3,1, 'Barbados');
+
+    expect(graph.breadthFirst(1)).toBeInstanceOf(Set);
+    expect(graph.breadthFirst(1)).toContain(1, 5, 3);
+  });
 });

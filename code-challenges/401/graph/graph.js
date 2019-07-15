@@ -45,10 +45,8 @@ class Graph {
   }
 
   getNeighbors(node){
-    if(!this._adjacencyList.has(node)){
-      throw new Error('ERROR! Invalid node.', node);
-    }
-
+    if(!this._adjacencyList.has(node))
+      throw new Error('ERROR! Invalid node.');
     return [...this._adjacencyList.get(node)];
   }
 
@@ -96,6 +94,39 @@ class Graph {
   
   getSize() {
     return this.size;
+  }
+
+  breadthFirst(startNode) {
+    const queue = [];
+    const visitedSet = new Set();
+
+    queue.unshift(startNode);
+    visitedSet.add(startNode);
+
+    if(this.size === 0){
+      return null;
+    }
+
+    while(queue.length){
+      const current = queue.pop();
+      visitedSet.add(current);
+
+      const neighbors = this.getNeighbors(current);
+
+      for(let neighbor of neighbors){
+        const neighborhood = neighbor.node;
+
+        if(visitedSet.has(neighborhood))
+          continue;
+        
+        else 
+          visitedSet.add(neighborhood);
+
+        queue.unshift(neighborhood);
+      }
+    }
+
+    return visitedSet;
   }
 }
 

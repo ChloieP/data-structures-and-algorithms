@@ -1,5 +1,5 @@
 # Graph
-Implement your own Graph.
+Implement your own Graph. The following day's challenge is to implement a breadth first traversal of the graph.
 
 ## Challenge
 The graph should be represented as an adjacency list, and should include the following methods:
@@ -33,6 +33,18 @@ The graph should be represented as an adjacency list, and should include the fol
 
 * I believe the time and space complexity for graph is O(V+E).
 
+### For Breadth First Traversal
+#### Challenge
+Extend your graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+#### Approach & Efficiency
+* There is plentiful online documentation for the search string 'breadth first traversal graph javascript.' Geeks for Geeks had a very informative article. I went through my class notes from the lecture on graph and the online resources I found. Then, with my ideas in my head, I went to the whiteboard and deved out the challenge. 
+
+* I believe the time and space complexity for graph is O(V+E).
+
+
 ## Solution
 
 [Graph Diagram](./assets/graph_diagram.JPG)
+
+[Breadth First Traversal](./assets/graph_diagram.JPG)
