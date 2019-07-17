@@ -30,7 +30,7 @@ describe('Acceptable Flight Patterns', () => {
   });
 
   it('can find the Bahamas and be happy!', () => {
-    expect(getEdge(graph, happyCities)).toEqual('true $500');
+    expect(getEdge(graph, happyCities)).toEqual('true: $800');
   });
 
   it('cannot find Jamaica and is sad', () => {
