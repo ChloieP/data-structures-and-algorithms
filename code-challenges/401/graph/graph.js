@@ -89,9 +89,9 @@ class Graph {
   getNodes() {
     if(this.size !== 0) {
       return [...this._adjacencyList.keys()];
-    }
-
-    else return null;
+    } else {
+      return null;
+    } 
   }
   
   getSize() {
