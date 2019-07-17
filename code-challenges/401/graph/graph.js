@@ -46,8 +46,7 @@ class Graph {
 
   getNeighbors(node){
     if(!this._adjacencyList.has(node)){
-      throw new Error('ERROR! Invalid node.', node);
-
+      throw new Error('ERROR: invalid node', node);
     }
     return [...this._adjacencyList.get(node)];
   }
@@ -87,12 +86,13 @@ class Graph {
   }
 
   getNodes() {
-    if(this.size !== 0) {
+    if(this.size !== 0){
       return [...this._adjacencyList.keys()];
-    } else {
+    }else{
       return null;
-    } 
+    }
   }
+
   
   getSize() {
     return this.size;
