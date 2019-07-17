@@ -45,8 +45,10 @@ class Graph {
   }
 
   getNeighbors(node){
-    if(!this._adjacencyList.has(node))
-      throw new Error('ERROR! Invalid node.');
+    if(!this._adjacencyList.has(node)){
+      throw new Error('ERROR! Invalid node.', node);
+
+    }
     return [...this._adjacencyList.get(node)];
   }
 
@@ -86,7 +88,7 @@ class Graph {
 
   getNodes() {
     if(this.size !== 0) {
-      return this._adjacencyList.keys();
+      return [...this._adjacencyList.keys()];
     }
 
     else return null;
@@ -128,6 +130,7 @@ class Graph {
 
     return visitedSet;
   }
+
 }
 
 const graph = new Graph();

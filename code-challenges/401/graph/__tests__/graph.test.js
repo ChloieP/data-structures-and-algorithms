@@ -56,7 +56,7 @@ describe('The Joy Of Graph', () => {
     graph.addNode(16);
     graph.addEdge(16, 16);
 
-    expect(graph.getNodes()).toContain(16);
+    expect(graph.getNodes(16)).toContain(16);
   });
 
   it('can properly returns null for an empty graph', () => {
