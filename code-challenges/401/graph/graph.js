@@ -25,7 +25,7 @@ class Graph {
 
   addNode(node){
     this._adjacencyList.set(node, []);
-    this.size++;
+    this.size += 1 ;
     return node;
   }
 
