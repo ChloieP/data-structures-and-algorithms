@@ -33,3 +33,5 @@ function getEdge(graph, cities){
 
   return `true: $${counter}`;
 }
+
+module.exports = getEdge;
