@@ -1,3 +1,4 @@
+
 'use strict';
 
 class Node {
@@ -25,7 +26,7 @@ class Graph {
 
   addNode(node){
     this._adjacencyList.set(node, []);
-    this.size += 1 ;
+    this.size++;
     return node;
   }
 
@@ -45,9 +46,8 @@ class Graph {
   }
 
   getNeighbors(node){
-    if(!this._adjacencyList.has(node)){
-      throw new Error('ERROR: invalid node', node);
-    }
+    if(!this._adjacencyList.has(node))
+      throw new Error('ERROR! Invalid node.');
     return [...this._adjacencyList.get(node)];
   }
 
@@ -86,13 +86,12 @@ class Graph {
   }
 
   getNodes() {
-    if(this.size !== 0){
-      return [...this._adjacencyList.keys()];
-    }else{
-      return null;
+    if(this.size !== 0) {
+      return this._adjacencyList.keys();
     }
-  }
 
+    else return null;
+  }
   
   getSize() {
     return this.size;
@@ -130,7 +129,6 @@ class Graph {
 
     return visitedSet;
   }
-
 }
 
 const graph = new Graph();
