@@ -20,14 +20,13 @@ class Graph {
   }
 
   addValue(value) {
-    let newNode = new Node(value);
-     this.addNode(newNode);
-     return newNode;
+     this.addNode(new Node(value));
   }
 
   addNode(node){
     this._adjacencyList.set(node, []);
     this.size++;
+    return node;
   }
 
   addEdge(startNode, endNode, weight = 0) {
@@ -46,10 +45,10 @@ class Graph {
   }
 
   getNeighbors(node){
-    // console.log(node);
-    if(!this._adjacencyList.has(node)){ 
-      throw new Error('ERROR! Invalid node.');
+    if(!this._adjacencyList.has(node)){
+      throw new Error('ERROR! Invalid node.', node);
     }
+
     return [...this._adjacencyList.get(node)];
   }
 
@@ -89,7 +88,7 @@ class Graph {
 
   getNodes() {
     if(this.size !== 0) {
-      return [...this._adjacencyList.keys()];
+      return this._adjacencyList.keys();
     }
 
     else return null;
@@ -100,24 +99,24 @@ class Graph {
   }
 
   breadthFirst(startNode) {
-    const queue = [];
-    const visitedSet = new Set();
+    let queue = [];
+    let visitedSet = new Set();
 
     queue.unshift(startNode);
     visitedSet.add(startNode);
 
-    if(this.size === 0){
+    if(visitedSet === 0){
       return null;
     }
 
     while(queue.length){
-      const current = queue.pop();
+      let current = queue.pop;
       visitedSet.add(current);
 
-      const neighbors = this.getNeighbors(current);
+      let neighbors = this.getNeighbors(current);
 
       for(let neighbor of neighbors){
-        const neighborhood = neighbor.node;
+        let neighborhood = neighbor.node;
 
         if(visitedSet.has(neighborhood))
           continue;
@@ -160,6 +159,6 @@ graph.addEdge(three, oh);
 graph.addEdge(oh, niiiine);
 graph.addEdge(niiiine, eight);
 
-// console.log(graph.getNeighbors(eight));
+console.log(graph.getNeighbors(eight));
 
 module.exports = { Node, Edge, Graph };

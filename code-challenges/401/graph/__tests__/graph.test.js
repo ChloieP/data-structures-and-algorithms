@@ -6,7 +6,7 @@ let graph = new grid.Graph();
 
 describe('The Joy Of Graph', () => {  
   it('can successfully add a node to the graph', () => {
-    expect(graph.addNode(1)).toEqual(1);
+    expect(graph.addValue(1)).toEqual({'value': 1});
   });
 
   it('can successfully add an edge to the graph', () => {
