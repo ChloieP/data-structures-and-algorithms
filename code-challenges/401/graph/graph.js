@@ -1,4 +1,3 @@
-
 'use strict';
 
 class Node {
@@ -21,13 +20,14 @@ class Graph {
   }
 
   addValue(value) {
-     this.addNode(new Node(value));
+    let newNode = new Node(value);
+     this.addNode(newNode);
+     return newNode;
   }
 
   addNode(node){
     this._adjacencyList.set(node, []);
     this.size++;
-    return node;
   }
 
   addEdge(startNode, endNode, weight = 0) {
@@ -46,8 +46,10 @@ class Graph {
   }
 
   getNeighbors(node){
-    if(!this._adjacencyList.has(node))
+    // console.log(node);
+    if(!this._adjacencyList.has(node)){ 
       throw new Error('ERROR! Invalid node.');
+    }
     return [...this._adjacencyList.get(node)];
   }
 
@@ -87,7 +89,7 @@ class Graph {
 
   getNodes() {
     if(this.size !== 0) {
-      return this._adjacencyList.keys();
+      return [...this._adjacencyList.keys()];
     }
 
     else return null;
@@ -158,6 +160,6 @@ graph.addEdge(three, oh);
 graph.addEdge(oh, niiiine);
 graph.addEdge(niiiine, eight);
 
-console.log(graph.getNeighbors(eight));
+// console.log(graph.getNeighbors(eight));
 
 module.exports = { Node, Edge, Graph };
