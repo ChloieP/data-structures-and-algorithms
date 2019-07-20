@@ -1,27 +1,21 @@
 'use strict';
 
-const { HashTable } = require('../hashtable/hashtable');
-
 const tree_intersection = (tree1, tree2) => {
-  const newHash = new HashTable();
-  const preOrder = root => {
-    if(!root) {
-      return null;
-    }
-    if(root) {
-      return newHash.add(root.data);
-    }
-    if(root.left) {
-      preOrder(root.left);
-    }
-    if(root.right) {
-      preOrder(root.right);
+  if(!tree1.root || !tree2.root) {
+    throw new Error('rootless tumbleweed');
+  }
+  let treeOak = tree1.preOrder();
+  let treePine = tree2.preOrder();
+  let commonValues = [];
+
+  for(let i = 0; i < treeOak.length - 1; i++) {
+    for(let j = 0; j < treePine.length - 1; j++) {
+      if(treeOak[i] === treePine[j]){
+        commonValues.push(treeOak[i]);
+      }
     }
   }
-
-  preOrder(tree1.root);
-  preOrder(tree2.root);
-  return newHash.print();
+  return commonValues;
 };
 
-module.exports = { tree_intersection };
+module.exports = tree_intersection;
